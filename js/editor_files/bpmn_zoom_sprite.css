@@ -1,0 +1,544 @@
+@CHARSET "UTF-8";
+.bpmn_zoom{
+  background-image:url("images/bpmn_sprite_with_zoom.png") !important;
+  background-repeat:no-repeat;
+  display:inline;
+  overflow:hidden;
+  padding-left:0px
+}
+
+.shape_150_event         {width: 42px; height: 42px}
+.shape_150_gateway       {width: 60px; height: 60px}
+.shape_150_dataobject    {width: 39px; height: 46px}
+.shape_150_datastore     {width: 60px; height: 65px}
+.shape_150_message       {width: 35px; height: 24px}
+.shape_150_data_icon     {width: 14px; height: 13px}
+.shape_150_task_icon     {width: 20px; height: 18px}
+.shape_150_activity_icon {width: 20px; height: 18px}
+.shape_150_status_icon   {width: 15px; height: 15px}
+
+.img_150_start_event           {background-position: -5px -5px !important}
+.img_150_ni_start_event        {background-position: -5px -50px !important}
+.img_150_intermediate_event    {background-position: -5px -95px !important}
+.img_150_ni_intermediate_event {background-position: -5px -140px !important}
+.img_150_end_event             {background-position: -5px -185px !important}
+
+.img_150_start_messagecatch             {background-position:  -50px   -5px !important}
+.img_150_intermediate_messagecatch      {background-position:  -95px   -5px !important}
+.img_150_intermediate_messagethrow      {background-position: -140px   -5px !important}
+.img_150_end_messagethrow               {background-position: -185px   -5px !important}
+.img_150_start_timer                    {background-position: -230px   -5px !important}
+.img_150_intermediate_timer             {background-position: -275px   -5px !important}
+.img_150_end_terminate                  {background-position: -320px   -5px !important}
+.img_150_start_signalcatch              {background-position:  -50px  -50px !important}
+.img_150_intermediate_signalcatch       {background-position:  -95px  -50px !important}
+.img_150_intermediate_signalthrow       {background-position: -140px  -50px !important}
+.img_150_end_signalthrow                {background-position: -185px  -50px !important}
+.img_150_start_conditional              {background-position: -230px  -50px !important}
+.img_150_intermediate_conditional       {background-position: -275px  -50px !important}
+.img_150_intermediate_linkcatch         {background-position: -320px  -50px !important}
+.img_150_start_multiplecatch            {background-position:  -50px  -95px !important}
+.img_150_intermediate_multiplecatch     {background-position:  -95px  -95px !important}
+.img_150_intermediate_multiplethrow     {background-position: -140px  -95px !important}
+.img_150_end_multiplethrow              {background-position: -185px  -95px !important}
+.img_150_start_parallel                 {background-position: -230px  -95px !important}
+.img_150_intermediate_parallel          {background-position: -275px  -95px !important}
+.img_150_intermediate_linkthrow         {background-position: -320px  -95px !important}
+.img_150_start_compensationcatch        {background-position:  -50px -140px !important}
+.img_150_intermediate_compensationcatch {background-position:  -95px -140px !important}
+.img_150_intermediate_compensationthrow {background-position: -140px -140px !important}
+.img_150_end_compensationthrow          {background-position: -185px -140px !important}
+.img_150_start_escalationcatch          {background-position: -230px -140px !important}
+.img_150_intermediate_escalationcatch   {background-position: -275px -140px !important}
+.img_150_intermediate_cancelcatch       {background-position: -320px -140px !important}
+.img_150_start_errorcatch               {background-position:  -50px -185px !important}
+.img_150_intermediate_errorcatch        {background-position:  -95px -185px !important}
+.img_150_intermediate_errorthrow        {background-position: -140px -185px !important}
+.img_150_end_errorthrow                 {background-position: -185px -185px !important}
+.img_150_intermediate_escalationthrow   {background-position: -230px -185px !important}
+.img_150_end_escalationthrow            {background-position: -275px -185px !important}
+.img_150_intermediate_cancelthrow       {background-position: -320px -185px !important}
+.img_150_end_cancelthrow                {background-position: -320px -185px !important}
+
+.img_150_gateway_exclusive           {background-position: -380px  -5px !important}
+.img_150_gateway_exclusive_marked    {background-position: -380px -65px !important}
+.img_150_gateway_parallel            {background-position: -441px  -5px !important}
+.img_150_gateway_eventbased          {background-position: -441px -65px !important}
+.img_150_gateway_inclusive           {background-position: -502px  -5px !important}  
+.img_150_gateway_exclusiveeventbased {background-position: -502px -65px !important}
+.img_150_gateway_paralleleventbased  {background-position: -563px  -5px !important}
+.img_150_gateway_complex             {background-position: -563px -65px !important}
+
+.img_150_data_dataobject   {background-position: -385px -150px !important}
+.img_150_data_datastore    {background-position: -469px -145px !important}
+.img_150_data_messagecatch {background-position: -551px -148px !important}
+.img_150_data_messagethrow {background-position: -551px -183px !important}
+.img_150_data_datainput        {background-position: -440px -145px !important}
+.img_150_data_dataoutput       {background-position: -440px -166px !important}
+.img_150_data_collection   {background-position: -440px -194px !important}
+
+.img_150_task_empty            {background-position: -630px -250px !important}
+.img_150_task_sendtask         {background-position: -631px   -6px !important}
+.img_150_task_receivetask      {background-position: -631px  -24px !important}
+.img_150_task_usertask         {background-position: -631px  -42px !important}
+.img_150_task_businessrule     {background-position: -631px  -60px !important}
+.img_150_task_servicetask      {background-position: -631px  -78px !important}
+.img_150_task_scripttask       {background-position: -631px  -96px !important}
+.img_150_task_manualtask       {background-position: -631px -112px !important}
+.img_150_activity_adhoc        {background-position: -652px   -6px !important}
+.img_150_loop_none             {background-position: -652px  -24px !important}
+.img_150_loop_sequencial       {background-position: -652px  -42px !important}
+.img_150_loop_parallel         {background-position: -652px  -60px !important}
+.img_150_loop_standard         {background-position: -652px  -78px !important}
+.img_150_activity_compensation {background-position: -652px  -96px !important}
+
+.img_150_status_error   {background-position: -610px -365px !important}
+.img_150_status_warning {background-position: -628px -365px !important}
+.img_150_status_info    {background-position: -648px -365px !important}
+
+.shape_125_event         {width: 35px; height: 35px}
+.shape_125_gateway       {width: 50px; height: 50px}
+.shape_125_dataobject    {width: 32px; height: 40px}
+.shape_125_datastore     {width: 51px; height: 54px}
+.shape_125_message       {width: 30px; height: 20px}
+.shape_125_data_icon     {width: 12px; height: 11px}
+.shape_125_task_icon     {width: 16px; height: 14px}
+.shape_125_activity_icon {width: 16px; height: 14px}
+.shape_125_status_icon   {width: 13px; height: 13px}
+
+.img_125_start_event           {background-position: -5px -235px !important}
+.img_125_ni_start_event        {background-position: -5px -275px !important}
+.img_125_intermediate_event    {background-position: -5px -315px !important}
+.img_125_ni_intermediate_event {background-position: -5px -355px !important}
+.img_125_end_event             {background-position: -5px -395px !important}
+
+.img_125_start_messagecatch             {background-position:  -45px -235px !important}
+.img_125_intermediate_messagecatch      {background-position:  -85px -235px !important}
+.img_125_intermediate_messagethrow      {background-position: -125px -235px !important}
+.img_125_end_messagethrow               {background-position: -165px -235px !important}
+.img_125_start_timer                    {background-position: -205px -235px !important}
+.img_125_intermediate_timer             {background-position: -245px -235px !important}
+.img_125_end_terminate                  {background-position: -285px -235px !important}
+.img_125_start_signalcatch              {background-position:  -45px -275px !important}
+.img_125_intermediate_signalcatch       {background-position:  -85px -275px !important}
+.img_125_intermediate_signalthrow       {background-position: -125px -275px !important}
+.img_125_end_signalthrow                {background-position: -165px -275px !important}
+.img_125_start_conditional              {background-position: -205px -275px !important}
+.img_125_intermediate_conditional       {background-position: -245px -275px !important}
+.img_125_intermediate_linkcatch         {background-position: -285px -275px !important}
+.img_125_start_multiplecatch            {background-position:  -45px -315px !important}
+.img_125_intermediate_multiplecatch     {background-position:  -85px -315px !important}
+.img_125_intermediate_multiplethrow     {background-position: -125px -315px !important}
+.img_125_end_multiplethrow              {background-position: -165px -315px !important}
+.img_125_start_parallel                 {background-position: -205px -315px !important}
+.img_125_intermediate_parallel          {background-position: -245px -315px !important}
+.img_125_intermediate_linkthrow         {background-position: -285px -315px !important}
+.img_125_start_compensationcatch        {background-position:  -45px -355px !important}
+.img_125_intermediate_compensationcatch {background-position:  -85px -355px !important}
+.img_125_intermediate_compensationthrow {background-position: -125px -355px !important}
+.img_125_end_compensationthrow          {background-position: -165px -355px !important}
+.img_125_start_escalationcatch          {background-position: -205px -355px !important}
+.img_125_intermediate_escalationcatch   {background-position: -245px -355px !important}
+.img_125_intermediate_cancelcatch       {background-position: -285px -355px !important}
+.img_125_start_errorcatch               {background-position:  -45px -395px !important}
+.img_125_intermediate_errorcatch        {background-position:  -85px -395px !important}
+.img_125_intermediate_errorthrow        {background-position: -125px -395px !important}
+.img_125_end_errorthrow                 {background-position: -165px -395px !important}
+.img_125_intermediate_escalationthrow   {background-position: -205px -395px !important}
+.img_125_end_escalationthrow            {background-position: -245px -395px !important}
+.img_125_intermediate_cancelthrow       {background-position: -285px -395px !important}
+.img_125_end_cancelthrow                {background-position: -285px -395px !important}
+
+.img_125_gateway_exclusive           {background-position: -339px -234px !important}
+.img_125_gateway_exclusive_marked    {background-position: -339px -285px !important}
+.img_125_gateway_parallel            {background-position: -390px -234px !important}
+.img_125_gateway_eventbased          {background-position: -390px -285px !important}
+.img_125_gateway_inclusive           {background-position: -441px -234px !important}  
+.img_125_gateway_exclusiveeventbased {background-position: -441px -285px !important}
+.img_125_gateway_paralleleventbased  {background-position: -492px -234px !important}
+.img_125_gateway_complex             {background-position: -492px -285px !important}
+
+.img_125_data_dataobject   {background-position: -347px -366px !important}
+.img_125_data_datastore    {background-position: -415px -361px !important}
+.img_125_data_messagecatch {background-position: -484px -364px !important}
+.img_125_data_messagethrow {background-position: -484px -393px !important}
+.img_125_data_datainput        {background-position: -392px -361px !important}
+.img_125_data_dataoutput       {background-position: -392px -379px !important}
+.img_125_data_collection   {background-position: -392px -402px !important}
+
+.img_125_task_empty            {background-position: -630px -250px !important}
+.img_125_task_sendtask         {background-position: -551px -236px !important}
+.img_125_task_receivetask      {background-position: -551px -251px !important}
+.img_125_task_usertask         {background-position: -551px -266px !important}
+.img_125_task_businessrule     {background-position: -551px -281px !important}
+.img_125_task_servicetask      {background-position: -551px -296px !important}
+.img_125_task_scripttask       {background-position: -551px -311px !important}
+.img_125_task_manualtask       {background-position: -551px -326px !important}
+.img_125_activity_adhoc        {background-position: -569px -236px !important}
+.img_125_loop_none             {background-position: -569px -251px !important}
+.img_125_loop_sequencial       {background-position: -569px -266px !important}
+.img_125_loop_parallel         {background-position: -569px -281px !important}
+.img_125_loop_standard         {background-position: -569px -296px !important}
+.img_125_activity_compensation {background-position: -569px -311px !important}
+
+.img_125_status_error   {background-position: -612px -390px !important}
+.img_125_status_warning {background-position: -627px -390px !important}
+.img_125_status_info    {background-position: -642px -390px !important}
+
+.shape_100_event         {width: 29px; height: 29px}
+.shape_100_gateway       {width: 41px; height: 41px}
+.shape_100_dataobject    {width: 26px; height: 33px}
+.shape_100_datastore     {width: 40px; height: 43px}
+.shape_100_message       {width: 23px; height: 12px}
+.shape_100_data_icon     {width: 9px; height: 10px}
+.shape_100_task_icon     {width: 12px; height: 12px}
+.shape_100_activity_icon {width: 12px; height: 12px}
+.shape_100_status_icon   {width: 10px; height: 10px}
+
+.img_100_start_event           {background-position: -5px -435px !important}
+.img_100_ni_start_event        {background-position: -5px -465px !important}
+.img_100_intermediate_event    {background-position: -5px -495px !important}
+.img_100_ni_intermediate_event {background-position: -5px -525px !important}
+.img_100_end_event             {background-position: -5px -555px !important}
+
+.img_100_start_messagecatch             {background-position:  -35px -435px !important}
+.img_100_intermediate_messagecatch      {background-position:  -65px -435px !important}
+.img_100_intermediate_messagethrow      {background-position:  -95px -435px !important}
+.img_100_end_messagethrow               {background-position: -125px -435px !important}
+.img_100_start_timer                    {background-position: -155px -435px !important}
+.img_100_intermediate_timer             {background-position: -185px -435px !important}
+.img_100_end_terminate                  {background-position: -215px -435px !important}
+.img_100_start_signalcatch              {background-position:  -35px -465px !important}
+.img_100_intermediate_signalcatch       {background-position:  -65px -465px !important}
+.img_100_intermediate_signalthrow       {background-position:  -95px -465px !important}
+.img_100_end_signalthrow                {background-position: -125px -465px !important}
+.img_100_start_conditional              {background-position: -155px -465px !important}
+.img_100_intermediate_conditional       {background-position: -185px -465px !important}
+.img_100_intermediate_linkcatch         {background-position: -215px -465px !important}
+.img_100_start_multiplecatch            {background-position:  -35px -495px !important}
+.img_100_intermediate_multiplecatch     {background-position:  -65px -495px !important}
+.img_100_intermediate_multiplethrow     {background-position:  -95px -495px !important}
+.img_100_end_multiplethrow              {background-position: -125px -495px !important}
+.img_100_start_parallel                 {background-position: -155px -495px !important}
+.img_100_intermediate_parallel          {background-position: -185px -495px !important}
+.img_100_intermediate_linkthrow         {background-position: -215px -495px !important}
+.img_100_start_compensationcatch        {background-position:  -35px -525px !important}
+.img_100_intermediate_compensationcatch {background-position:  -65px -525px !important}
+.img_100_intermediate_compensationthrow {background-position:  -95px -525px !important}
+.img_100_end_compensationthrow          {background-position: -125px -525px !important}
+.img_100_start_escalationcatch          {background-position: -155px -525px !important}
+.img_100_intermediate_escalationcatch   {background-position: -185px -525px !important}
+.img_100_intermediate_cancelcatch       {background-position: -215px -525px !important}
+.img_100_start_errorcatch               {background-position:  -35px -555px !important}
+.img_100_intermediate_errorcatch        {background-position:  -65px -555px !important}
+.img_100_intermediate_errorthrow        {background-position:  -95px -555px !important}
+.img_100_end_errorthrow                 {background-position: -125px -555px !important}
+.img_100_intermediate_escalationthrow   {background-position: -155px -555px !important}
+.img_100_end_escalationthrow            {background-position: -185px -555px !important}
+.img_100_intermediate_cancelthrow       {background-position: -215px -555px !important}
+.img_100_end_cancelthrow                {background-position: -215px -555px !important}
+
+.img_100_gateway_exclusive           {background-position: -259px -435px !important}
+.img_100_gateway_exclusive_marked    {background-position: -259px -476px !important}
+.img_100_gateway_parallel            {background-position: -300px -435px !important}
+.img_100_gateway_eventbased          {background-position: -300px -476px !important}
+.img_100_gateway_inclusive           {background-position: -341px -435px !important}  
+.img_100_gateway_exclusiveeventbased {background-position: -341px -476px !important}
+.img_100_gateway_paralleleventbased  {background-position: -382px -435px !important}
+.img_100_gateway_complex             {background-position: -382px -476px !important}
+
+.img_100_data_dataobject   {background-position: -263px -532px !important}
+.img_100_data_datastore    {background-position: -319px -530px !important}
+.img_100_data_messagecatch {background-position: -374px -532px !important}
+.img_100_data_messagethrow {background-position: -374px -555px !important}
+.img_100_data_datainput        {background-position: -299px -529px !important}
+.img_100_data_dataoutput       {background-position: -299px -544px !important}
+.img_100_data_collection   {background-position: -299px -562px !important}
+
+.img_100_task_empty            {background-position: -630px -250px !important}
+.img_100_task_sendtask         {background-position: -434px -437px !important}
+.img_100_task_receivetask      {background-position: -434px -449px !important;}
+.img_100_task_usertask         {background-position: -434px -461px !important}
+.img_100_task_businessrule     {background-position: -434px -473px !important}
+.img_100_task_servicetask      {background-position: -434px -485px !important}
+.img_100_task_scripttask       {background-position: -434px -497px !important}
+.img_100_task_manualtask       {background-position: -434px -509px !important}
+.img_100_activity_adhoc        {background-position: -448px -437px !important}
+.img_100_loop_none             {background-position: -448px -449px !important}
+.img_100_loop_sequencial       {background-position: -448px -461px !important}
+.img_100_loop_parallel         {background-position: -448px -473px !important}
+.img_100_loop_standard         {background-position: -448px -485px !important}
+.img_100_activity_compensation {background-position: -448px -497px !important}
+
+.img_100_status_error   {background-position: -614px -415px !important}
+.img_100_status_warning {background-position: -626px -415px !important}
+.img_100_status_info    {background-position: -639px -415px !important}
+
+.shape_75_event         {width: 21px; height: 21px}
+.shape_75_gateway       {width: 30px; height: 30px}
+.shape_75_dataobject    {width: 20px; height: 24px}
+.shape_75_datastore     {width: 30px; height: 32px}
+.shape_75_message       {width: 24px; height: 13px}
+.shape_75_data_icon     {width:  8px; height:  7px}
+.shape_75_task_icon     {width: 10px; height:  9px}
+.shape_75_activity_icon {width: 10px; height:  9px}
+.shape_75_status_icon   {width:  7px; height:  7px}
+
+.img_75_start_event           {background-position: -5px -585px !important}
+.img_75_ni_start_event        {background-position: -5px -610px !important}
+.img_75_intermediate_event    {background-position: -5px -635px !important}
+.img_75_ni_intermediate_event {background-position: -5px -660px !important}
+.img_75_end_event             {background-position: -5px -685px !important}
+
+.img_75_start_messagecatch             {background-position:  -30px -585px !important}
+.img_75_intermediate_messagecatch      {background-position:  -55px -585px !important}
+.img_75_intermediate_messagethrow      {background-position:  -80px -585px !important}
+.img_75_end_messagethrow               {background-position: -105px -585px !important}
+.img_75_start_timer                    {background-position: -130px -585px !important}
+.img_75_intermediate_timer             {background-position: -155px -585px !important}
+.img_75_end_terminate                  {background-position: -180px -585px !important}
+.img_75_start_signalcatch              {background-position:  -30px -610px !important}
+.img_75_intermediate_signalcatch       {background-position:  -55px -610px !important}
+.img_75_intermediate_signalthrow       {background-position:  -80px -610px !important}
+.img_75_end_signalthrow                {background-position: -105px -610px !important}
+.img_75_start_conditional              {background-position: -130px -610px !important}
+.img_75_intermediate_conditional       {background-position: -155px -610px !important}
+.img_75_intermediate_linkcatch         {background-position: -180px -610px !important}
+.img_75_start_multiplecatch            {background-position:  -30px -635px !important}
+.img_75_intermediate_multiplecatch     {background-position:  -55px -635px !important}
+.img_75_intermediate_multiplethrow     {background-position:  -80px -635px !important}
+.img_75_end_multiplethrow              {background-position: -105px -635px !important}
+.img_75_start_parallel                 {background-position: -130px -635px !important}
+.img_75_intermediate_parallel          {background-position: -155px -635px !important}
+.img_75_intermediate_linkthrow         {background-position: -180px -635px !important}
+.img_75_start_compensationcatch        {background-position:  -30px -660px !important}
+.img_75_intermediate_compensationcatch {background-position:  -55px -660px !important}
+.img_75_intermediate_compensationthrow {background-position:  -80px -660px !important}
+.img_75_end_compensationthrow          {background-position: -105px -660px !important}
+.img_75_start_escalationcatch          {background-position: -130px -660px !important}
+.img_75_intermediate_escalationcatch   {background-position: -155px -660px !important}
+.img_75_intermediate_cancelcatch       {background-position: -180px -660px !important}
+.img_75_start_errorcatch               {background-position:  -30px -685px !important}
+.img_75_intermediate_errorcatch        {background-position:  -55px -685px !important}
+.img_75_intermediate_errorthrow        {background-position:  -80px -685px !important}
+.img_75_end_errorthrow                 {background-position: -105px -685px !important}
+.img_75_intermediate_escalationthrow   {background-position: -130px -685px !important}
+.img_75_end_escalationthrow            {background-position: -155px -685px !important}
+.img_75_intermediate_cancelthrow       {background-position: -180px -685px !important}
+.img_75_end_cancelthrow                {background-position: -180px -685px !important}
+
+.img_75_gateway_exclusive           {background-position: -210px -585px !important}
+.img_75_gateway_exclusive_marked    {background-position: -210px -616px !important}
+.img_75_gateway_parallel            {background-position: -241px -585px !important}
+.img_75_gateway_eventbased          {background-position: -241px -616px !important}
+.img_75_gateway_inclusive           {background-position: -272px -585px !important}  
+.img_75_gateway_exclusiveeventbased {background-position: -272px -616px !important}
+.img_75_gateway_paralleleventbased  {background-position: -303px -585px !important}
+.img_75_gateway_complex             {background-position: -303px -616px !important}
+
+.img_75_data_dataobject   {background-position: -215px -667px !important}
+.img_75_data_datastore    {background-position: -257px -664px !important}
+.img_75_data_messagecatch {background-position: -292px -666px !important}
+.img_75_data_messagethrow {background-position: -292px -683px !important}
+.img_75_data_datainput        {background-position: -242px -664px !important}
+.img_75_data_dataoutput       {background-position: -242px -675px !important}
+.img_75_data_collection   {background-position: -242px -689px !important}
+
+.img_75_task_empty            {background-position: -630px -250px !important}
+.img_75_task_sendtask         {background-position: -344px -582px !important}
+.img_75_task_receivetask      {background-position: -344px -591px !important}
+.img_75_task_usertask         {background-position: -344px -600px !important}
+.img_75_task_businessrule     {background-position: -344px -609px !important}
+.img_75_task_servicetask      {background-position: -344px -618px !important}
+.img_75_task_scripttask       {background-position: -344px -627px !important}
+.img_75_task_manualtask       {background-position: -344px -636px !important}
+.img_75_activity_adhoc        {background-position: -354px -582px !important}
+.img_75_loop_none             {background-position: -354px -591px !important}
+.img_75_loop_sequencial       {background-position: -354px -600px !important}
+.img_75_loop_parallel         {background-position: -354px -609px !important}
+.img_75_loop_standard         {background-position: -354px -618px !important}
+.img_75_activity_compensation {background-position: -354px -627px !important}
+
+.img_75_status_error   {background-position: -615px -439px !important}
+.img_75_status_warning {background-position: -625px -439px !important}
+.img_75_status_info    {background-position: -634px -439px !important}
+
+.shape_50_event         {width: 14px; height: 14px}
+.shape_50_gateway       {width: 20px; height: 20px}
+.shape_50_dataobject    {width: 14px; height: 15px}
+.shape_50_datastore     {width: 20px; height: 22px}
+.shape_50_message       {width: 12px; height:  8px}
+.shape_50_data_icon     {width:  5px; height:  5px}
+.shape_50_task_icon     {width:  6px; height:  6px}
+.shape_50_activity_icon {width:  6px; height:  6px}
+.shape_50_status_icon   {width:  5px; height:  5px}
+
+.social_icon_small {max-width: 16px; height: 16px;}   
+
+.img_50_start_event           {background-position: -5px -710px !important}
+.img_50_ni_start_event        {background-position: -5px -730px !important}
+.img_50_intermediate_event    {background-position: -5px -750px !important}
+.img_50_ni_intermediate_event {background-position: -5px -770px !important}
+.img_50_end_event             {background-position: -5px -790px !important}
+
+.img_50_start_messagecatch             {background-position:  -25px -710px !important}
+.img_50_intermediate_messagecatch      {background-position:  -45px -710px !important}
+.img_50_intermediate_messagethrow      {background-position:  -65px -710px !important}
+.img_50_end_messagethrow               {background-position:  -85px -710px !important}
+.img_50_start_timer                    {background-position: -105px -710px !important}
+.img_50_intermediate_timer             {background-position: -125px -710px !important}
+.img_50_end_terminate                  {background-position: -145px -710px !important}
+.img_50_start_signalcatch              {background-position:  -25px -730px !important}
+.img_50_intermediate_signalcatch       {background-position:  -45px -730px !important}
+.img_50_intermediate_signalthrow       {background-position:  -65px -730px !important}
+.img_50_end_signalthrow                {background-position:  -85px -730px !important}
+.img_50_start_conditional              {background-position: -105px -730px !important}
+.img_50_intermediate_conditional       {background-position: -125px -730px !important}
+.img_50_intermediate_linkcatch         {background-position: -145px -730px !important}
+.img_50_start_multiplecatch            {background-position:  -25px -750px !important}
+.img_50_intermediate_multiplecatch     {background-position:  -45px -750px !important}
+.img_50_intermediate_multiplethrow     {background-position:  -65px -750px !important}
+.img_50_end_multiplethrow              {background-position:  -85px -750px !important}
+.img_50_start_parallel                 {background-position: -105px -750px !important}
+.img_50_intermediate_parallel          {background-position: -125px -750px !important}
+.img_50_intermediate_linkthrow         {background-position: -145px -750px !important}
+.img_50_start_compensationcatch        {background-position:  -25px -770px !important}
+.img_50_intermediate_compensationcatch {background-position:  -45px -770px !important}
+.img_50_intermediate_compensationthrow {background-position:  -65px -770px !important}
+.img_50_end_compensationthrow          {background-position:  -85px -770px !important}
+.img_50_start_escalationcatch          {background-position: -105px -770px !important}
+.img_50_intermediate_escalationcatch   {background-position: -125px -770px !important}
+.img_50_intermediate_cancelcatch       {background-position: -145px -770px !important}
+.img_50_start_errorcatch               {background-position:  -25px -790px !important}
+.img_50_intermediate_errorcatch        {background-position:  -45px -790px !important}
+.img_50_intermediate_errorthrow        {background-position:  -65px -790px !important}
+.img_50_end_errorthrow                 {background-position:  -85px -790px !important}
+.img_50_intermediate_escalationthrow   {background-position: -105px -790px !important}
+.img_50_end_escalationthrow            {background-position: -125px -790px !important}
+.img_50_intermediate_cancelthrow       {background-position: -145px -790px !important}
+.img_50_end_cancelthrow                {background-position: -145px -790px !important}
+
+.img_50_gateway_exclusive           {background-position: -165px -710px !important}
+.img_50_gateway_exclusive_marked    {background-position: -165px -731px !important}
+.img_50_gateway_parallel            {background-position: -186px -710px !important}
+.img_50_gateway_eventbased          {background-position: -186px -731px !important}
+.img_50_gateway_inclusive           {background-position: -207px -710px !important}  
+.img_50_gateway_exclusiveeventbased {background-position: -207px -731px !important}
+.img_50_gateway_paralleleventbased  {background-position: -228px -710px !important}
+.img_50_gateway_complex             {background-position: -228px -731px !important}
+
+.img_50_data_dataobject   {background-position: -171px -770px !important}
+.img_50_data_datastore    {background-position: -200px -768px !important}
+.img_50_data_messagecatch {background-position: -227px -770px !important}
+.img_50_data_messagethrow {background-position: -227px -781px !important}
+.img_50_data_datainput        {background-position: -190px -768px !important}
+.img_50_data_dataoutput       {background-position: -190px -775px !important}
+.img_50_data_collection   {background-position: -190px -785px !important}
+
+.img_50_task_empty            {background-position: -630px -250px !important}
+.img_50_task_sendtask         {background-position: -254px -709px !important}
+.img_50_task_receivetask      {background-position: -254px -715px !important}
+.img_50_task_usertask         {background-position: -254px -721px !important}
+.img_50_task_businessrule     {background-position: -254px -727px !important}
+.img_50_task_servicetask      {background-position: -254px -733px !important}
+.img_50_task_scripttask       {background-position: -254px -739px !important}
+.img_50_task_manualtask       {background-position: -254px -745px !important}
+.img_50_activity_adhoc        {background-position: -260px -709px !important}
+.img_50_loop_none             {background-position: -260px -715px !important}
+.img_50_loop_sequencial       {background-position: -260px -721px !important}
+.img_50_loop_parallel         {background-position: -260px -727px !important}
+.img_50_loop_standard         {background-position: -260px -733px !important}
+.img_50_activity_compensation {background-position: -260px -739px !important}
+
+.img_50_status_error   {background-position: -617px -460px !important}
+.img_50_status_warning {background-position: -623px -460px !important}
+.img_50_status_info    {background-position: -629px -460px !important}
+
+.social_small_facebook {background-position: -427px -618px !important}
+.social_small_twitter {background-position: -531px -592px !important}
+.social_small_linkedin {background-position: -557px -645px !important}
+.social_small_pmapper {background-position: -682px -540px !important}
+
+/*connector sprite*/
+.con_100_target_normal_bottom {background-position: 0px -830px !important}
+.con_100_target_normal_left {background-position: -15px -830px !important}
+.con_100_target_normal_up {background-position: -30px -830px !important}
+.con_100_target_normal_right {background-position: -45px -830px !important}
+
+.con_100_target_message_bottom {background-position: -60px -830px !important}
+.con_100_target_message_left {background-position: -75px -830px !important}
+.con_100_target_message_up {background-position: -90px -830px !important}
+.con_100_target_message_right {background-position: -105px -830px !important}
+
+.con_100_target_association_bottom {background-position: -120px -830px !important}
+.con_100_target_association_left {background-position: -135px -830px !important}
+.con_100_target_association_up {background-position: -155px -830px !important}
+.con_100_target_association_right {background-position: -170px -830px !important}
+
+.con_100_source_conditional_bottom {background-position: -195px -830px !important}
+.con_100_source_conditional_left {background-position: -210px -830px !important}
+.con_100_source_conditional_up {background-position: -195px -830px !important}
+.con_100_source_conditional_right {background-position: -210px -830px !important}
+
+.con_100_source_message_bottom {background-position: -180px -830px !important}
+.con_100_source_message_left {background-position: -180px -830px !important}
+.con_100_source_message_up {background-position: -180px -830px !important}
+.con_100_source_message_right {background-position: -180px -830px !important}
+
+/*BPMN Activity Style Class*/
+.bpmn_activity { 
+/*    width: 150px; 
+    height: 150px; */
+    background-color: #d9edf7;
+    border: 3px solid #0055cc;
+    -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+            border-radius: 7px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+    behavior:url(images/pie.htc);
+}
+
+.bpmn_activity_subprocess {
+    border-color: #000;
+}
+
+.bpmn_activity_call_activity {
+    border: 3px solid #C8C8C8;
+}
+
+.bpmn_activity_transaction {
+    border-color: #000;
+    border-style: double !important;
+}
+
+.bpmn_activity_event_subprocess {
+    border-color: #000;
+    border-style: dotted !important;
+    border-width: 2px;
+}
+
+/** Rotate Label **/
+.roateText {
+    writing-mode:tb-rl;
+    white-space:nowrap;
+    display:block;
+    /*bottom:0;*/
+    /* WebKit, Safari */
+    -webkit-transform: rotate(-90deg);
+    /* Firefox 3.5+*/
+    -moz-transform: rotate(-90deg);
+    /* Opera 10.5+ */
+    -o-transform: rotate(90deg);
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    /*filter: flipv fliph;*/
+    /*writing-mode: tb-rl;*/
+
+}
+
+.focused{
+    border: 2px solid #67FF01 !important;
+
+}

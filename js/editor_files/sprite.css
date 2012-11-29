@@ -1,0 +1,166 @@
+/*! 
+    Document   : sprite
+    Created on : 17-07-2012, 03:49:34 PM
+    Author     : Gustavo Silva
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* ICONS TOOLBAR*/
+[class^="bpmn-icon-"],
+[class*=" bpmn-icon-"] {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  *margin-right: .3em;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-image: url("images/bpmn_sprite_with_zoom.png");
+  background-position: 14px 14px;
+  background-repeat: no-repeat;
+}
+
+[class^="bpmn-icon-"]:last-child,
+[class*=" bpmn-icon-"]:last-child {
+  *margin-left: 0;
+}
+
+.bpmn-icon-add { background-position: -686px -0px; }
+.bpmn-icon-delete { background-position: -686px -20px; }
+.bpmn-icon-close { background-position: -686px -40px; }
+.bpmn-icon-edit { background-position: -686px -60px; }
+.bpmn-icon-save { background-position: -686px -80px; }
+.bpmn-icon-properties { background-position: -686px -100px; }
+.bpmn-icon-import { background-position: -686px -120px; }
+.bpmn-icon-export { background-position: -686px -140px; }
+.bpmn-icon-expand { background-position: -686px -160px; }
+.bpmn-icon-contract { background-position: -686px -180px; }
+.bpmn-icon-refresh { background-position: -686px -200px; }
+.bpmn-icon-word { background-position: -686px -220px; }
+.bpmn-icon-pdf { background-position: -686px -240px; }
+.bpmn-icon-xml { background-position: -686px -260px; }
+.bpmn-icon-document { background-position: -686px -280px; }
+.bpmn-icon-pie { background-position: -686px -300px; }
+.bpmn-icon-shared { background-position: -686px -320px; }
+.bpmn-icon-find { background-position: -686px -340px; }
+.bpmn-icon-pmapper { background-position: -686px -360px; }
+.bpmn-icon-thunderbolt { background-position: -686px -380px; }
+.bpmn-icon-tile-horizontal { background-position: -686px -400px; }
+.bpmn-icon-tile-vertical { background-position: -686px -420px; }
+.bpmn-icon-gear { background-position: -686px -440px; }
+.bpmn-icon-database-gear { background-position: -686px -460px; }
+.bpmn-icon-wrench { background-position: -686px -480px; }
+.bpmn-icon-repeat { background-position: -686px -500px; }
+.bpmn-icon-layout { background-position: -686px -520px; }
+.bpmn-icon-layout-link { background-position: -686px -540px; }
+.bpmn-icon-network { background-position: -686px -560px; }
+.bpmn-icon-convert { background-position: -686px -580px; }
+.bpmn-icon-gear-blue { background-position: -686px -600px; }
+.bpmn-icon-gauge-meter { background-position: -686px -620px; }
+.bpmn-icon-user { background-position: -686px -640px; }
+.bpmn-icon-resize { background-position: -686px -660px; }
+.bpmn-icon-library-download { background-position: -686px -680px; }
+
+/* ICONS BPMN TOOLBARS*/
+[class^="bpmn_icon_"],
+[class*=" bpmn_icon_"] {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  *margin-right: .3em;
+  line-height: 18px;
+  vertical-align: text-top;
+  background-image: url("images/bpmn_sprite_with_zoom.png");
+  background-position: 18px 18px;
+  background-repeat: no-repeat;
+}
+
+[class^="bpmn_icon_"]:last-child,
+[class*=" bpmn_icon_"]:last-child {
+  *margin-left: 0;
+}
+.bpmn_icon_activity{background-position: 0px -852px !important}
+.bpmn_icon_start{background-position: -18px -852px !important}
+.bpmn_icon_intermediate{background-position: -36px -852px !important}
+.bpmn_icon_boundary{background-position: -54px -852px !important}
+.bpmn_icon_end{background-position: -72px -852px !important}
+.bpmn_icon_gateway{background-position: -90px -852px !important}
+.bpmn_icon_pool{background-position: -108px -852px !important}
+.bpmn_icon_lane{background-position: -126px -852px !important}
+.bpmn_icon_participant{background-position: -144px -852px !important}
+.bpmn_icon_dataobject{background-position: 0px -870px !important}
+.bpmn_icon_datastore{background-position: -18px -870px !important}
+.bpmn_icon_textannotation{background-position: -36px -870px !important}
+.bpmn_icon_message{background-position: -44px -426px !important} /**/
+.bpmn_icon_group{background-position: -54px -870px !important}
+
+.bpmn_icon_start_color{background-position: -90px -870px !important}
+.bpmn_icon_intermediate_color{background-position: -108px -870px !important}
+.bpmn_icon_end_color{background-position: -126px -870px !important}
+
+.bpmn_icon_empty{background-position: -0px -885px !important}
+.bpmn_icon_messagecatch{background-position: -72px -870px !important}
+.bpmn_icon_messagethrow{background-position: -144px -870px !important}
+.bpmn_icon_timer{background-position: -162px -852px !important}
+.bpmn_icon_conditional{background-position: -162px -870px !important}
+.bpmn_icon_escalationcatch{background-position: -180px -852px !important}
+.bpmn_icon_escalationthrow{background-position: -180px -870px !important}
+.bpmn_icon_linkcatch{background-position: -198px -852px !important}
+.bpmn_icon_linkthrow{background-position: -198px -870px !important}
+.bpmn_icon_errorcatch{background-position: -216px -852px !important}
+.bpmn_icon_errorthrow{background-position: -216px -870px !important}
+.bpmn_icon_cancelcatch{background-position: -234px -852px !important}
+.bpmn_icon_cancelthrow{background-position: -234px -870px !important}
+.bpmn_icon_compensationcatch{background-position: -252px -852px !important}
+.bpmn_icon_compensationthrow{background-position: -252px -870px !important}
+.bpmn_icon_signalcatch{background-position: -270px -852px !important}
+.bpmn_icon_signalthrow{background-position: -270px -870px !important}
+.bpmn_icon_multiplecatch{background-position: -288px -852px !important}
+.bpmn_icon_multiplethrow{background-position: -288px -870px !important}
+.bpmn_icon_parallel{background-position: -306px -852px !important}
+.bpmn_icon_terminate{background-position: -306px -870px !important}
+
+.bpmn_icon_data_datainput{background-position: -198px -852px !important}
+.bpmn_icon_data_dataoutput{background-position: -198px -870px !important}
+
+.bpmn_icon_noninterrupting_mode{background-position: -324px -852px !important}
+.bpmn_icon_interrupting_mode{background-position: -324px -870px !important}
+
+.bpmn_icon_task{background-position: -342px -852px !important}
+.bpmn_icon_subprocess{background-position: -568px -250px !important}
+.bpmn_icon_taskcallactivity{background-position: -342px -870px !important}
+.bpmn_icon_subprocesscallactivity{background-position: -342px -870px !important}
+.bpmn_icon_transaction{background-position: -360px -852px !important}
+.bpmn_icon_eventsubprocess{background-position: -360px -870px !important}
+
+.bpmn_icon_changetype{background-position: -450px -870px !important}
+.bpmn_icon_interrupting{background-position: -450px -852px !important}
+.bpmn_icon_transform{background-position: -432px -870px !important}
+.bpmn_icon_looptype {background-position: -486px -852px !important}
+.bpmn_icon_convert {background-position: -468px -852px !important}
+.bpmn_icon_tasktype {background-position: -486px -870px !important}
+.bpmn_icon_convertpool {background-position: -108px -852px !important}
+.bpmn_icon_direction {background-position: -504px -852px !important}
+.bpmn_icon_resize {background-position: -504px -870px !important}
+
+
+.bpmn_icon_gateway_exclusive{background-position: -432px -852px !important}
+.bpmn_icon_gateway_parallel{background-position: -396px -852px !important}
+.bpmn_icon_gateway_inclusive{background-position: -396px -870px !important}
+.bpmn_icon_gateway_complex{background-position: -378px -852px !important}
+.bpmn_icon_gateway_eventbased{background-position: -414px -870px !important}
+.bpmn_icon_gateway_exclusiveeventbased{background-position: -414px -852px !important}
+.bpmn_icon_gateway_paralleleventbased{background-position: -378px -870px !important}
+
+.bpmn_icon_dataobject_input{background-position: -198px -852px !important}
+.bpmn_icon_dataobject_output{background-position: -198px -870px !important}
+.bpmn_icon_dataobject_collection{background-position: -568px -280px !important}/**/
+
+.bpmn_icon_message_catch{background-position: -72px -870px !important}
+.bpmn_icon_message_throw{background-position: -144px -870px !important}
+
+.bpmn-activity-corner-left-top{width:8px; height: 8px; background-position: -632px -140px !important}
+.bpmn-activity-corner-right-top{width:8px; height: 8px; background-position: -632px -140px !important}
+.bpmn-activity-corner-left-bottom{width:8px; height: 8px; background-position: -632px -140px !important}
+.bpmn-activity-corner-right-bottom{width:8px; height: 8px; background-position: -632px -140px !important}
+

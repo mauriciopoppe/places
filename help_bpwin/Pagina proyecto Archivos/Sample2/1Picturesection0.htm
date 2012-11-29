@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<TITLE>
+Computer Associates's Report Template Builder - Sample2 Document
+</TITLE>
+</HEAD>
+<BODY ONUNLOAD="close_winrep();">
+<SCRIPT>
+var win = null;
+function close_winrep()
+{
+ if (win && !win.closed)
+ {
+  win.close();
+ }
+}
+function show_rep(rep_pict)
+{
+ if (win && !win.closed)
+ {
+  win.frames[1].location.replace(rep_pict + "_2.htm");
+  win.focus();
+  return;
+ }
+ win = window.open(rep_pict + ".htm", "RTBViewReportPicture","titlebar=no,scrollbars=yes,top=0,left=0,resizable=yes,height=350,width=400");
+}
+</SCRIPT>
+<P><IMG src='images/diagram12.jpeg' usemap ='#mapdiagram'>
+<MAP name='mapdiagram'>
+<AREA HREF="#" ONCLICK="var rep='PictureTabLkd33'; show_rep(rep);" alt='SIG BASADO EN TECNOLOGÍA WEB ORIENTADO A LA  BUSQUEDA DE RUTAS ENTRE  SUCURSALES, ATM’S Y USUARIO' shape='rect' coords='365,293,780,493'>
+</MAP>
+</IMG>
+</P>
+</BODY>
+</HTML>

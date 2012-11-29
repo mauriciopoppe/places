@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<TITLE>
+Computer Associates's Report Template Builder - Sample2 Document
+</TITLE>
+</HEAD>
+<BODY ONUNLOAD="close_winrep();">
+<SCRIPT>
+var win = null;
+function close_winrep()
+{
+ if (win && !win.closed)
+ {
+  win.close();
+ }
+}
+function show_rep(rep_pict)
+{
+ if (win && !win.closed)
+ {
+  win.frames[1].location.replace(rep_pict + "_2.htm");
+  win.focus();
+  return;
+ }
+ win = window.open(rep_pict + ".htm", "RTBViewReportPicture","titlebar=no,scrollbars=yes,top=0,left=0,resizable=yes,height=350,width=400");
+}
+</SCRIPT>
+<P><IMG src='images/diagram13.jpeg' usemap ='#mapdiagram'>
+<MAP name='mapdiagram'>
+<AREA HREF="#" ONCLICK="var rep='PictureTabLkd34'; show_rep(rep);" alt='Análisis ' shape='rect' coords='215,178,355,288'>
+<AREA HREF="#" ONCLICK="var rep='PictureTabLkd35'; show_rep(rep);" alt='Diseño' shape='rect' coords='435,333,575,413'>
+<AREA HREF="#" ONCLICK="var rep='PictureTabLkd36'; show_rep(rep);" alt='Implementación ' shape='rect' coords='760,463,900,553'>
+</MAP>
+</IMG>
+</P>
+</BODY>
+</HTML>

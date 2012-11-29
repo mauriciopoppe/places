@@ -1,0 +1,205 @@
+/* 
+    Document   : pm_style
+    Created on : 20-07-2012, 04:10:44 PM
+    Author     : dev-GustavoSilva
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.pm_container {
+    margin: 0px auto;
+    min-width: 1010px;
+    max-width: 1600px;
+/*    border: 1px solid gold;*/
+    width: 100%;
+    height: 100%;
+    position: fixed;
+/*    overflow: auto;*/
+}
+#pm_project_container {
+    width: 100%;
+/*    border: red 1px solid;*/
+}
+
+#pm_project_header {
+    border: 1px solid #E8E8E8;
+    padding: 5px 5px;
+    margin-bottom: 10px;
+}
+
+#pm_project_body {
+    border: 1px solid #E8E8E8;
+    float: left;
+    width: 74%;
+    height: 100%;
+    position: relative;
+/*    border: 1px solid red;*/
+}
+
+#pm_project_sidebar {
+    border: 1px solid #E8E8E8;
+    float: right;
+    width: 24%;
+/*    height: 100%;*/
+/*    border: 1px solid blue;*/
+    position:relative;
+}
+
+#pm_project_tree {
+    height: 55%;
+}
+
+#pm_project_tree_list{
+    overflow: auto;
+/*    height:87%;*/
+}
+
+#pm_project_properties_list {
+    overflow: auto;
+    height: 44%
+}
+
+/* Add hand to tr hover*/
+.table tbody tr:hover td,
+.table tbody tr:hover th {
+    cursor: pointer;
+}
+
+/* Subnav */
+.subnav {
+    height: 36px;
+    background-color: #eeeeee; /* Old browsers */
+    background-repeat: repeat-x; /* Repeat the gradient */
+    background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%); /* FF3.6+ */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+    background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Chrome 10+,Safari 5.1+ */
+    background-image: -ms-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* IE10+ */
+    background-image: -o-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Opera 11.10+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+    background-image: linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* W3C */
+    border: 1px solid #E8E8E8;
+    /*        -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                    border-radius: 4px;*/
+    margin-bottom: 10px;
+}
+.subnav .nav {
+    margin-bottom: 0;
+}
+.subnav .nav > li > a {
+    margin: 0;
+    padding-top:    11px;
+    padding-bottom: 11px;
+    border-left: 1px solid #f5f5f5;
+    border-right: 1px solid #e5e5e5;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+.subnav .nav > .active > a,
+.subnav .nav > .active > a:hover {
+    padding-left: 13px;
+    color: #777;
+    background-color: #e9e9e9;
+    border-right-color: #ddd;
+    border-left: 0;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+    -moz-box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.05);
+}
+.subnav .nav > .active > a .caret,
+.subnav .nav > .active > a:hover .caret {
+    border-top-color: #777;
+}
+.subnav .nav > li:first-child > a,
+.subnav .nav > li:first-child > a:hover {
+    border-left: 0;
+    padding-left: 12px;
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}
+.subnav .nav > li:last-child > a {
+    border-right: 0;
+}
+.subnav .dropdown-menu {
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
+}
+
+/* Fixed subnav on scroll, but only for 980px and up (sorry IE!) */
+@media (min-width: 980px) {
+    .subnav .nav > li:first-child > a,
+    .subnav .nav > li:first-child > a:hover {
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+}
+/* BPMN Text Rotation */
+.rotateText {
+   font-family: Arial;
+   font-size: 10pt;
+   display: table;
+   text-align: center;
+   /* for firefox, safari, chrome, etc. */
+   -webkit-transform: rotate(-90deg);
+   -moz-transform: rotate(-90deg);
+   -o-transform: rotate(-90deg);/* For Opera*/
+   -khtml-transform: rotate(-90deg);/* For Lunix*/
+   /* for ie */
+   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+ }
+ .rotateText p {
+   display: table-cell;
+   vertical-align: middle;
+ }
+
+ .rotateTextIE {
+   font-family: Arial;
+   font-size: 10pt;
+   display: table;
+   text-align: center;
+   writing-mode: tb-rl;
+   filter: flipv fliph;
+ }
+
+ .normalText{
+   font-family: Arial;
+   font-size: 10pt;
+   display: table;
+   text-align: center;
+ }
+
+ .normalText p{
+   display: table-cell;
+   vertical-align: middle;
+ }
+
+ .normalTopText{
+   font-family: Arial;
+   font-size: 10pt;
+   display: table;
+   text-align: center;
+ }
+
+.user-from {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.replace {
+    display:none !important;
+}
+
+.activate {
+    border: rgba(82, 168, 236, 0.8) 1px solid !important;
+    outline: 0 !important;
+    outline: thin dotted \9;
+    /* IE6-9 */
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+        -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6) !important;
+}

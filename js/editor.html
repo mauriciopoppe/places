@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html><head>
+    <title>jCore 0.1.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--Including jcore.utils files -->
+    <link type="text/css" href="editor_files/jquery-ui-1.css" rel="stylesheet">
+    <link type="text/css" href="editor_files/jquery.css" rel="stylesheet">
+    <link type="text/css" href="editor_files/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="editor_files/jquery-1.js"></script>
+    <script type="text/javascript" src="editor_files/jquery-ui-1.js"></script>
+    <script type="text/javascript" src="editor_files/jquery.js"></script>
+    <script type="text/javascript" src="editor_files/underscore.js"></script>
+    <script type="text/javascript" src="editor_files/restclient.js"></script>
+    <script type="text/javascript" src="editor_files/bootstrap.js"></script>
+    <script type="text/javascript" src="editor_files/wz_jsgraphics.js"></script>
+    <!--Including jcore.pmdraw files -->
+    <link type="text/css" href="editor_files/bpmn_zoom_sprite.css" rel="stylesheet">
+    <link type="text/css" href="editor_files/sprite.css" rel="stylesheet">
+    <script type="text/javascript" src="editor_files/arraylist.js"></script>
+    <script type="text/javascript" src="editor_files/geometry.js"></script>
+    <script type="text/javascript" src="editor_files/point.js"></script>
+    <script type="text/javascript" src="editor_files/commands.js"></script>
+    <!--script type="text/javascript" src="src/draw/arraylist.js"></script-->
+    <script type="text/javascript" src="editor_files/graphics.js"></script>
+    <script type="text/javascript" src="editor_files/jcoreobject.js"></script>
+    <script type="text/javascript" src="editor_files/uniqueid.js"></script>
+    <script type="text/javascript" src="editor_files/utils.js"></script>
+    <!--<script type="text/javascript" src="src/draw/shapes.js" ></script>-->
+    <!--shapes-->
+    <script type="text/javascript" src="editor_files/shape.js"></script>
+    <script type="text/javascript" src="editor_files/color.js"></script>
+    <script type="text/javascript" src="editor_files/label.js"></script>
+    <script type="text/javascript" src="editor_files/text.js"></script>
+    <!--end shapes-->
+    <script type="text/javascript" src="editor_files/regularshape.js"></script>
+    <script type="text/javascript" src="editor_files/oval.js"></script>
+    <script type="text/javascript" src="editor_files/arc.js"></script>
+    <script type="text/javascript" src="editor_files/rectangle.js"></script>
+    <script type="text/javascript" src="editor_files/resize_handler.js"></script>
+    <script type="text/javascript" src="editor_files/port.js"></script>
+    <script type="text/javascript" src="editor_files/segment_move_handler.js"></script>
+    <script type="text/javascript" src="editor_files/intersection.js"></script>
+    <!--<script type="text/javascript" src="src/draw/connections.js" ></script>-->
+    <!--connections-->
+    <script type="text/javascript" src="editor_files/segment.js"></script>
+    <script type="text/javascript" src="editor_files/router.js"></script>
+    <script type="text/javascript" src="editor_files/manhattanconnectionrouter.js"></script>
+    <script type="text/javascript" src="editor_files/connection.js"></script>
+    <script type="text/javascript" src="editor_files/connectiondecorator.js"></script>
+    <script type="text/javascript" src="editor_files/targetspriteconnectiondecorator.js"></script>
+    <script type="text/javascript" src="editor_files/sourcespriteconnectiondecorator.js"></script>
+    <!--end connections-->
+    <!--<script type="text/javascript" src="src/draw/bpmn_shapes.js" ></script>-->
+    <!--bpmn_shapes-->
+    <script type="text/javascript" src="editor_files/layer.js"></script>
+    <script type="text/javascript" src="editor_files/bpmnshape.js"></script>
+    <!--end bpmn_shapes-->
+    <!--<script type="text/javascript" src="src/draw/bpmn_elements.js" ></script>-->
+    <script type="text/javascript" src="editor_files/bpmnevent.js"></script>
+    <script type="text/javascript" src="editor_files/bpmnboundaryevent.js"></script>
+    <script type="text/javascript" src="editor_files/bpmngateway.js"></script>
+    <script type="text/javascript" src="editor_files/bpmndataobject.js"></script>
+    <script type="text/javascript" src="editor_files/bpmndatastore.js"></script>
+    <script type="text/javascript" src="editor_files/bpmnannotation.js"></script>
+    <script type="text/javascript" src="editor_files/bpmnactivity.js"></script>
+    <script type="text/javascript" src="editor_files/bpmnsubprocess.js"></script>
+    <!--<script type="text/javascript" src="src/draw/containers.js" ></script>-->
+    <script type="text/javascript" src="editor_files/bpmngroupelement.js"></script>
+    <script type="text/javascript" src="editor_files/bpmnpool.js"></script>
+    <script type="text/javascript" src="editor_files/bpmnlane.js"></script>
+    <script type="text/javascript" src="editor_files/bpmnparticipant.js"></script>
+    <script type="text/javascript" src="editor_files/bpmngroup.js"></script>
+    <script type="text/javascript" src="editor_files/canvas.js"></script>
+    <script type="text/javascript" src="editor_files/markers.js"></script>
+    <script type="text/javascript" src="editor_files/canvasJquery.js"></script>
+    <script type="text/javascript" src="editor_files/multipleselectioncontainer.js"></script>
+    <!--Including jcore.pmui files -->
+    <link type="text/css" href="editor_files/pm_style.css" rel="stylesheet">
+    <link type="text/css" href="editor_files/pmcmenu.css" rel="stylesheet">
+    <link type="text/css" href="editor_files/styletree.css" rel="stylesheet">
+    <script type="text/javascript" src="editor_files/cmenu.js"></script>
+    <script type="text/javascript" src="editor_files/gform.js"></script>
+    <script type="text/javascript" src="editor_files/sbar.js"></script>
+    <script type="text/javascript" src="editor_files/tree.js"></script>
+
+    <style>
+      html, body{
+        margin:0; 
+        padding:0; 
+        height:100%;
+      }
+      #pm_project_body {
+        margin-left: 8px;
+        width: 74%;
+      }
+
+      #pm_project_sidebar {
+        width: 20%;
+      }
+
+      #pm_project_toolbar {
+        float: left;
+        width: 40px;
+        border: 1px solid #E8E8E8;
+        /**/
+        background-color: #eeeeee; /* Old browsers */
+        background-repeat: repeat; /* Repeat the gradient */
+        background-image: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%); /* FF3.6+ */
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f5f5), color-stop(100%,#eeeeee)); /* Chrome,Safari4+ */
+        background-image: -webkit-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Chrome 10+,Safari 5.1+ */
+        background-image: -ms-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* IE10+ */
+        background-image: -o-linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* Opera 11.10+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+        background-image: linear-gradient(top, #f5f5f5 0%,#eeeeee 100%); /* W3C */
+        /*        border: 1px solid #e5e5e5;*/
+      }
+      #pm_project_toolbar ul{
+        list-style: none;
+        margin: 5px 5px;
+      }
+
+      #pm_project_toolbar ul > li{
+        display: inline-block;
+        *display: inline;
+        padding: 4px;
+        margin-bottom: 3px;
+        margin-left: 0px;
+        /*        *margin-left: .3em;*/
+        font-size: 13px;
+        line-height: 18px;
+        *line-height: 20px;
+        color: #333333;
+        text-align: center;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+        vertical-align: middle;
+        cursor: pointer;
+        background-color: #f5f5f5;
+        *background-color: #e6e6e6;
+        background-image: -ms-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+        background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: linear-gradient(top, #ffffff, #e6e6e6);
+        background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+        background-repeat: repeat-x;
+        border: 1px solid #cccccc;
+        *border: 0;
+        border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+        border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+        border-bottom-color: #b3b3b3;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0);
+        filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+        *zoom: 1;
+        -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+      }
+
+      #pm_project_toolbar ul > li:hover{
+        color: #333333;
+        text-decoration: none;
+        background-color: #e6e6e6;
+        *background-color: #d9d9d9;
+        /* Buttons in IE7 don't get borders, so darken on hover */
+
+        background-position: 0 -15px;
+        -webkit-transition: background-position 0.1s linear;
+        -moz-transition: background-position 0.1s linear;
+        -ms-transition: background-position 0.1s linear;
+        -o-transition: background-position 0.1s linear;
+        transition: background-position 0.1s linear;
+      }
+
+      #paintarea {
+        background-image:url('css/images/grid_20.png');
+      }
+    </style>
+    <script>
+      $(document).ready(function(){
+        //        alert($('#pm_project_properties').height());
+      
+        $.resizeDivs = function(){
+          var $_container = $('.pm_container');
+          var $_project   = $('#pm_project_container');
+          var $_header    = $('#pm_project_header');
+          var $_sidebar   = $('#pm_project_sidebar');
+          var $_body      = $('#pm_project_body');
+          var $_toolbar   = $('#pm_project_toolbar');
+          var $_nav       = $('.subnav');
+          var $_canvas_c  = $('#canvas_content');
+        
+//          console.log('windows w: ' + $(document).width() + ' h: ' + $(document).height());
+          
+          $_container.height($(window).height()- 5);
+          
+          //Height of div Project is height container minus height header minus padding and margin header = 20
+          //minus height nav minus padding and margin nav = 10 minus 5
+          var _header_height = $_header.height();
+          _header_height += parseInt($_header.css('padding-top')) + parseInt($_header.css('padding-bottom'));
+          _header_height += parseInt($_header.css('margin-top')) + parseInt($_header.css('margin-bottom'));
+                    
+          var _nav_height = $_nav.height(); 
+          _nav_height += parseInt($_nav.css('padding-top')) + parseInt($_nav.css('padding-bottom'));
+          _nav_height += parseInt($_nav.css('margin-top')) + parseInt($_nav.css('margin-bottom'));
+          
+          $_project.height($_container.height()- _header_height - _nav_height - 5);
+          
+          $_body.height($_project.height());
+          
+          $_sidebar.height($_project.height());
+          
+          $_canvas_c.height($_project.height()-60);
+        };
+      
+        $.resizeDivs();
+      
+        $(window).resize(function() {
+          $.resizeDivs();
+        });
+      
+        var oTable = $('#tbl_project_properties').dataTable({
+          "bPaginate": false,
+          "bLengthChange": false,
+          "bFilter": false,
+          "bSort": false,
+          "bInfo": false,
+          "bAutoWidth": true,
+          "sScrollY": 150,
+          "sScrollX": "100%",
+          "sScrollXInner": "110%"
+        });
+        $('#pm_project_tree_list').pmtree({
+          collapsed : false,
+          label	  : 'el arbol',
+          select : function (param) {
+            //                alert ('selected item '+ param.uid);
+            var url='';
+            var fields = new Array();
+            if (typeof param != 'undefined' && param !=null) {
+              switch(param.type)
+              {
+                case 'LANE_SET' :
+                  url= '/project/designer-property?LNS_UID='+param.uid;
+                  fields=['(Uid)','Name','X','Y','Width','Height','Size Identical','Participants'];
+                  break;
+                case 'LANE' :
+                  url= '/project/designer-property?LAN_UID='+param.uid;
+                  fields=['(Uid)','Name'];              
+                  break;
+                case 'ACTIVITY' : case 'SUBPROCESS' :
+                    url= '/project/designer-property?ACT_UID='+param.uid;
+                    fields=['(Uid)','Name','Type', 'Compensation','Start Quantity','Completion Quantity'
+                      ,'Task Type','Implementation','Instantiate','Script Type','Script'
+                      ,'Loop Type','Test Before','Loop Maximun','Loop Condition','Loop Cardinality'
+                      ,'Loop Behavior','Completion Condition','Ordering','Cancel Remaining Instances'
+                      ,'Protocol','Method','Referer'/*,'Default Flow','Master Diagram'*/,'Global','X','Y'
+                      ,'Width','Height','Ad Hoc','Collapsed'];
+                  
+                    break;
+                  /*case 'SUBPROCESS' :
+                          url= '/project/designer-property?ACT_UID='+param.uid;
+                          fields=['(Uid)','Name','Ad Hoc','Collapsed','Type','Loop Type','X','Y','Width','Height'];
+                          break;*/
+                case 'STARTEVENT' :
+                  url= '/project/designer-property?EVN_UID='+param.uid;
+                  fields=['(Uid)','Name','Type','Trigger','Interrupting','X','Y','Condition'
+                    ,'Escalation Name','Escalation Code','Message','Operation Name'
+                    ,'Operation Implementation Ref','Time Date','Time Cycle','Time Duration'];
+                  break;
+                case 'ENDEVENT' :
+                  url= '/project/designer-property?EVN_UID='+param.uid;
+                  fields=['(Uid)','Name','Type','Result','X','Y','Wait for Completion'
+                    ,'Error Name','Error Code','Escalation Name','Escalation Code'
+                    ,'Message','Operation Name','Operation Implementation Ref'];          
+                  break;
+                case 'INTERMEDIATEEVENT' :
+                  switch(node.attributes.behavior)
+                  {
+                    case 'CATCH':
+                      url= '/project/designer-property?EVN_UID='+param.uid;
+                      fields=['(Uid)','Name','Type','Trigger','X','Y','Condition','Escalation Name'
+                        ,'Escalation Code','Message','Operation Name','Operation Implementation Ref'
+                        ,'Time Date','Time Cycle','Time Duration'];               
+                      break;
+                    case 'THROW':
+                      url= '/project/designer-property?EVN_UID='+param.uid;
+                      fields=['(Uid)','Name','Type','Result ','X','Y','Condition','Escalation Name'
+                        ,'Escalation Code','Message','Operation Name','Operation Implementation Ref'
+                        ,'Time Date','Time Cycle','Time Duration'];               
+                      break;
+                  }
+                  break;
+                case 'BOUNDARYEVENT' :
+                  url= '/project/designer-property?EVN_UID='+param.uid;
+                  fields=['(Uid)','Name','Type','Trigger ','Interrupting'];
+                  break;  
+                case 'GATEWAY' :
+                  url= '/project/designer-property?GAT_UID='+param.uid;
+                  fields=['(Uid)','Name','Type','Direction','X','Y','Activation Count','Waiting For Start'
+                    ,'Instantiate','Event Gateway Type'];
+                  break;
+                case 'EMPTY_POOL' :
+                  url= '/project/designer-property?PAR_UID='+param.uid;
+                  fields=['(Uid)','Name','X','Y','Width','Height','Participants'];        
+                  break;
+                case 'DATAOBJECT':
+                  url= '/project/designer-property?DAT_UID='+param.uid;
+                  fields=['(Uid)','Name','X','Y','Global','Collection'];        
+                  break;
+                case 'DATASTORE':
+                  url= '/project/designer-property?DAT_UID='+param.uid;
+                  fields=['(Uid)','Name','X','Y','Global','Capacity','Unlimited'];
+                  break;
+                case 'ARTIFACT' :
+                  url= '/project/designer-property?ART_UID='+param.uid;
+                  fields=['(Uid)','Name','X','Y','Width','Height'];
+                  break;
+              }
+              //                    loadPropertyStore(fields,url);
+            
+            }
+          },
+        
+          items : ''
+        }) ;
+      
+        $('#myTab a:first').tab('show');
+        $('#myTab a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+      
+        //PMDRAW
+        $( "li", $('#pm_project_toolbar') ).draggable({
+          //		cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+          revert: "invalid", // when not dropped, the item will revert back to its initial position
+          helper: "clone",
+          cursor: "move",
+          zIndex: 999
+        });  
+        $("#paintarea").pmDraw();
+      });
+    </script>
+  </head>
+  <body style="cursor: auto;">
+    <!-- DIV PM_CONTAINER -->
+    <div style="height: 400px;" class="pm_container">
+      <!--DIV HEADER-->
+      <div id="pm_project_header">
+        <div style="float:left;">
+          YOUR LOGO HERE
+        </div>
+        <div style="float:right;">
+          <div class="btn-group pull-right">
+            <a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
+              <i class="bpmn-icon-user"></i> User Name
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <!--END DIV HEADER-->
+      <!--NAVBAR-->
+      <div class="subnav">
+        <div style="float:left; padding: 7px 5px;">BPMN Project: <strong>Diagram # 1</strong></div>
+        <div style="float:right;">
+          <ul class="nav nav-pills">
+            <li><a href="#"><i class="bpmn-icon-save"></i> Save As...</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="bpmn-icon-gauge-meter"></i> BPA Tools <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="bpmn-icon-gauge-meter"></i> KPI Manager</a></li>
+                <li><a href="#"><i class="bpmn-icon-pie"></i> KPI Dashboard</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="bpmn-icon-export"></i> Export Options <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="bpmn-icon-xml"></i> Export to BPMN 2.0 XML</a></li>
+                <li><a href="#"><i class="bpmn-icon-pdf"></i> Export to PDF</a></li>
+                <li><a href="#"><i class="bpmn-icon-word"></i> Export to MS Word</a></li>
+              </ul>
+            </li>
+            <li><a href="#"><i class="bpmn-icon-add"></i> Add Diagram</a></li>
+            <li><a href="#"><i class="bpmn-icon-delete"></i> Delete Diagram</a></li>
+            <li><a href="#"><i class="bpmn-icon-close"></i> Close Diagram</a></li>
+          </ul>
+        </div>
+      </div>
+      <!--END NAVBAR-->
+      <!--DIV PM_PROJECT_CONTAINER-->
+      <div style="height: 299px;" id="pm_project_container">
+        <!-- TOOLBAR -->
+        <div id="pm_project_toolbar">
+          <ul>
+            <li class="ui-draggable" id="pool"><i class="bpmn_icon_pool valid-outside-shapes-group"></i></li>
+            <li class="ui-draggable" id="lane"><i class="bpmn_icon_lane valid-outside-shapes-group"></i></li>
+            <li class="ui-draggable" id="participant"><i class="bpmn_icon_participant valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="activity"><i class="bpmn_icon_activity valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="event"><i class="bpmn_icon_start valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="intermediateevent"><i class="bpmn_icon_intermediate valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="boundaryevent"><i class="bpmn_icon_boundary valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="endevent"><i class="bpmn_icon_end valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="gateway"><i class="bpmn_icon_gateway valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="dataobject"><i class="bpmn_icon_dataobject valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="datastore"><i class="bpmn_icon_datastore valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="annotation"><i class="bpmn_icon_textannotation valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="subprocess"><i class="bpmn_icon_group valid-outside-shapes"></i></li>
+            <li class="ui-draggable" id="group"><i class="icon-font valid-outside-shapes"></i></li>
+          </ul>
+        </div>
+        <!-- END TOOLBAR -->
+        <!--DIV BODY LAYOUT-->
+        <div style="height: 299px;" id="pm_project_body">
+          <ul class="nav nav-tabs" id="myTab">
+            <li class="active"><a href="#Diagram_1">Diagram # 1</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="Diagram_1">
+              <div id="canvas_content" style="overflow: auto; position: relative; height: 239px;">               
+                <div class="ui-droppable" id="paintarea" style="width: 4000px; height: 4000px; position: absolute;"><div style="position: absolute; width: 0px; height: 0px; z-index: 1; background-color: rgba(0, 128, 255, 0.2); left: 0px; top: 0px; display: none;" id="718558612506899e4564442077614420"></div><div class="bpmn_shape valid-drop-class ui-draggable ui-droppable" style="position: absolute; left: 221.5px; top: 60.4px; width: 29px; height: 29px; z-index: 1; cursor: default;" id="318104592506899e8564468095811134"><div class="bpmn_zoom img_100_start_event" style="position: absolute; left: 0px; top: 0px; width: 29px; height: 29px; z-index: 1;" id="318104592506899e8564468095811134Layer-main event layer"></div><div class=" label_100" style="position: absolute; left: 0px; top: 0px; width: 29px; height: 29px; z-index: 1;" id="318104592506899e8564468095811134Layer-Label"><div style="position: absolute; left: -30.5px; top: 29px; width: 90px; height: 20px; z-index: 1; display: block; text-align: center; font-family: Arial,Helvetica,sans-serif; font-size: 10pt; font-style: normal;" id="495335934506899e8564487050620039"><span style="width: 90px;">Start # 1</span><input style="display: none; left: 0px; top: 0px; height: 10px;" class="input-small" id="398984134506899e8564498057533044" type="text"></div></div><div style="position: absolute; left: -3px; top: -3px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="nw318104592506899e8564468095811134resizehandler"></div><div style="position: absolute; left: 26px; top: -3px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="ne318104592506899e8564468095811134resizehandler"></div><div style="position: absolute; left: 26px; top: 26px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="se318104592506899e8564468095811134resizehandler"></div><div style="position: absolute; left: -3px; top: 26px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="sw318104592506899e8564468095811134resizehandler"></div></div><div class="bpmn_shape valid-drop-class ui-draggable ui-droppable" style="position: absolute; left: 622.5px; top: 162.4px; width: 29px; height: 29px; z-index: 1; cursor: crosshair;" id="385215159506899e95644c1033128159"><div class="bpmn_zoom img_100_start_event" style="position: absolute; left: 0px; top: 0px; width: 29px; height: 29px; z-index: 1;" id="385215159506899e95644c1033128159Layer-main event layer"></div><div class=" label_100" style="position: absolute; left: 0px; top: 0px; width: 29px; height: 29px; z-index: 1;" id="385215159506899e95644c1033128159Layer-Label"><div style="position: absolute; left: -30.5px; top: 29px; width: 90px; height: 20px; z-index: 1; display: block; text-align: center; font-family: Arial,Helvetica,sans-serif; font-size: 10pt; font-style: normal;" id="719942397506899e95644d3041066011"><span style="width: 90px;">Start # 1</span><input style="display: none; left: 0px; top: 0px; height: 10px;" class="input-small" id="362460967506899e95644e5078585693" type="text"></div></div><div style="position: absolute; left: -3px; top: -3px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="nw385215159506899e95644c1033128159resizehandler"></div><div style="position: absolute; left: 26px; top: -3px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="ne385215159506899e95644c1033128159resizehandler"></div><div style="position: absolute; left: 26px; top: 26px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="se385215159506899e95644c1033128159resizehandler"></div><div style="position: absolute; left: -3px; top: 26px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="sw385215159506899e95644c1033128159resizehandler"></div></div><div class="bpmn_shape valid-drop-class ui-draggable ui-droppable" style="position: absolute; left: 318.5px; top: 109.4px; width: 29px; height: 29px; z-index: 1; cursor: crosshair;" id="910867044506899ed5648a3090394833"><div class="bpmn_zoom img_100_start_event" style="position: absolute; left: 0px; top: 0px; width: 29px; height: 29px; z-index: 1;" id="910867044506899ed5648a3090394833Layer-main event layer"></div><div class=" label_100" style="position: absolute; left: 0px; top: 0px; width: 29px; height: 29px; z-index: 1;" id="910867044506899ed5648a3090394833Layer-Label"><div style="position: absolute; left: -30.5px; top: 29px; width: 90px; height: 20px; z-index: 1; display: block; text-align: center; font-family: Arial,Helvetica,sans-serif; font-size: 10pt; font-style: normal;" id="651169556506899ed5648b6011717705"><span style="width: 90px;">Start # 1</span><input style="display: none; left: 0px; top: 0px; height: 10px;" class="input-small" id="589644162506899ed5648c7078504377" type="text"></div></div><div style="position: absolute; left: -3px; top: -3px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="nw910867044506899ed5648a3090394833resizehandler"></div><div style="position: absolute; left: 26px; top: -3px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="ne910867044506899ed5648a3090394833resizehandler"></div><div style="position: absolute; left: 26px; top: 26px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="se910867044506899ed5648a3090394833resizehandler"></div><div style="position: absolute; left: -3px; top: 26px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="sw910867044506899ed5648a3090394833resizehandler"></div><div class="bpmn_port ui-draggable" style="position: absolute; left: 25px; top: 11px; width: 8px; height: 8px; z-index: 1; display: none; opacity: 0.8;" id="port-377759679506899f4564d91049027811"><div style="font-size: 0pt;"><div style="position:absolute;left:3px;top:0px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:red;overflow:hidden;"></div><div style="position:absolute;left:3px;top:7px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:red;overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:6px;height:2px;clip:rect(0,6px,2px,0);background-color:red;overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:6px;height:2px;clip:rect(0,6px,2px,0);background-color:red;overflow:hidden;"></div><div style="position:absolute;left:0px;top:3px;width:8px;height:2px;clip:rect(0,8px,2px,0);background-color:red;overflow:hidden;"></div></div></div></div><div class="bpmn_shape valid-drop-class ui-draggable ui-droppable" style="position: absolute; left: 847.5px; top: 24.4px; width: 29px; height: 29px; z-index: 1; cursor: default;" id="760927940506899ee5648f1021267318"><div class="bpmn_zoom img_100_start_event" style="position: absolute; left: 0px; top: 0px; width: 29px; height: 29px; z-index: 1;" id="760927940506899ee5648f1021267318Layer-main event layer"></div><div class=" label_100" style="position: absolute; left: 0px; top: 0px; width: 29px; height: 29px; z-index: 1;" id="760927940506899ee5648f1021267318Layer-Label"><div style="position: absolute; left: -30.5px; top: 29px; width: 90px; height: 20px; z-index: 1; display: block; text-align: center; font-family: Arial,Helvetica,sans-serif; font-size: 10pt; font-style: normal;" id="484040799506899ee564900026743930"><span style="width: 90px;">Start # 1</span><input style="display: none; left: 0px; top: 0px; height: 10px;" class="input-small" id="910117997506899ee564929033631763" type="text"></div></div><div style="position: absolute; left: -3px; top: -3px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="nw760927940506899ee5648f1021267318resizehandler"></div><div style="position: absolute; left: 26px; top: -3px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="ne760927940506899ee5648f1021267318resizehandler"></div><div style="position: absolute; left: 26px; top: 26px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="se760927940506899ee5648f1021267318resizehandler"></div><div style="position: absolute; left: -3px; top: 26px; width: 4px; height: 4px; z-index: 1; background-color: rgb(255, 255, 255); border: thin solid black; display: none;" id="sw760927940506899ee5648f1021267318resizehandler"></div><div class="bpmn_port ui-draggable" style="position: absolute; left: 11px; top: -4px; width: 8px; height: 8px; z-index: 1; display: none; opacity: 0.8;" id="port-821374931506899f4564db4088359546"><div style="font-size: 0pt;"><div style="position:absolute;left:3px;top:0px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:red;overflow:hidden;"></div><div style="position:absolute;left:3px;top:7px;width:2px;height:1px;clip:rect(0,2px,1px,0);background-color:red;overflow:hidden;"></div><div style="position:absolute;left:1px;top:1px;width:6px;height:2px;clip:rect(0,6px,2px,0);background-color:red;overflow:hidden;"></div><div style="position:absolute;left:1px;top:5px;width:6px;height:2px;clip:rect(0,6px,2px,0);background-color:red;overflow:hidden;"></div><div style="position:absolute;left:0px;top:3px;width:8px;height:2px;clip:rect(0,8px,2px,0);background-color:red;overflow:hidden;"></div></div></div></div><div style="position: absolute; left: 0px; top: 0px; height: 0px; width: 0px; z-index: 2;" id="577156673506899f4564dc7014971923"><div style="position: absolute; left: 0px; top: 0px; height: 0px; width: 0px; z-index: 200;" id="966948916506899f4564e24092566259"><div style="font-size: 0pt;"><div style="position:absolute;left:605px;top:4px;width:1px;height:121px;clip:rect(0,1px,121px,0);background-color:rgba(0,0,0,1);overflow:hidden;"></div></div><div class="ui-draggable" style="position: absolute; left: 603px; top: 62px; width: 4px; height: 4px; z-index: 2; background-color: rgb(0, 255, 0); border: thin solid black; display: none;" id="476083858506899e4564086096456872"></div></div><div style="position: absolute; left: 0px; top: 0px; height: 0px; width: 0px; z-index: 200;" id="981445977506899f4564e38029244696"><div style="font-size: 0pt;"><div style="position:absolute;left:605px;top:4px;width:258px;height:1px;clip:rect(0,258px,1px,0);background-color:rgba(0,0,0,1);overflow:hidden;"></div></div><div class="ui-draggable" style="position: absolute; left: 731.5px; top: 2px; width: 4px; height: 4px; z-index: 2; background-color: rgb(0, 255, 0); border: thin solid black; display: none;" id="476083858506899e4564086096456872"></div></div><div style="position: absolute; left: 0px; top: 0px; height: 0px; width: 0px; z-index: 200;" id="466800872506899f4564e43064806907"><div style="font-size: 0pt;"><div style="position:absolute;left:862px;top:4px;width:1px;height:21px;clip:rect(0,1px,21px,0);background-color:rgba(0,0,0,1);overflow:hidden;"></div></div></div><div class="bpmn_zoom con_100_target_normal_up" style="position: absolute; left: 857.5px; top: 13.4px; height: 11px; width: 11px; z-index: 2;" id="612048473506899f4564dd9048416789"></div><div style="position: absolute; left: 0px; top: 0px; height: 0px; width: 0px; z-index: 200;" id="482870892506899f4564e08046845095"><div style="font-size: 0pt;"><div style="position:absolute;left:347px;top:124px;width:259px;height:1px;clip:rect(0,259px,1px,0);background-color:rgba(0,0,0,1);overflow:hidden;"></div></div></div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--END DIV BODY LAYOUT-->
+          
+        <!--DIV SIDEBAR LAYOUT-->		
+        <div style="height: 299px;" id="pm_project_sidebar">
+          <div id="pm_project_tree"><div class="subnav" style="margin-bottom: 0px;">
+              <div style="padding:10px 15px;"><strong>BPMN Definitons</strong></div></div>
+            <div id="pm_project_tree_list"><div class="content_tree"><ul id="root" class="menu"></ul></div></div>
+          </div>
+          <div id="pm_project_properties">
+            <div class="subnav" style="margin-bottom: 0px;"><div style="padding:10px 15px;"><strong>Properties</strong></div></div>
+            <div id="pm_project_properties_list">
+              <div id="tbl_project_properties_wrapper" class="dataTables_wrapper" role="grid"><div class="dataTables_scroll"><div style="overflow: hidden; position: relative; border: 0pt none; width: 100%;" class="dataTables_scrollHead"><div style="width: 256px; padding-right: 0px;" class="dataTables_scrollHeadInner"><table style="margin-left: 0pt; width: 256px;" class="table table-striped table-condensed dataTable"><thead>
+                  <tr role="row"><th style="width: 100px;" colspan="1" rowspan="1" role="columnheader" class="sorting_disabled">Name</th><th style="width: 100px;" colspan="1" rowspan="1" role="columnheader" class="sorting_disabled">Value</th></tr>
+                </thead></table></div></div><div style="overflow: auto; width: 100%; height: 150px;" class="dataTables_scrollBody"><table style="margin-left: 0pt; width: 110%;" id="tbl_project_properties" class="table table-striped table-condensed dataTable"><thead>
+                  <tr style="height: 0px;" role="row"><th style="width: 100px; padding-top: 0pt; padding-bottom: 0pt; border-top-width: 0pt; border-bottom-width: 0pt; height: 0pt;" colspan="1" rowspan="1" role="columnheader" class="sorting_disabled"></th><th style="width: 100px; padding-top: 0pt; padding-bottom: 0pt; border-top-width: 0pt; border-bottom-width: 0pt; height: 0pt;" colspan="1" rowspan="1" role="columnheader" class="sorting_disabled"></th></tr>
+                </thead>
+                
+                
+              <tbody aria-relevant="all" aria-live="polite" role="alert"><tr class="odd"><td class="dataTables_empty" colspan="2" valign="top">No data available in table</td></tr></tbody></table></div></div></div>
+            </div>
+          </div>
+        </div><!--END DIV LAYOUT-->
+      </div>
+      <!--END DIV PM_PROJECT_CONTAINER-->
+      <!---DIV FOOTER-->	
+      <div id="pm_project_footer">
+        
+      </div><!--END DIV FOOTER-->
+    </div><!-- END DIV PM_CONTAINER -->
+  
+
+</body></html>
