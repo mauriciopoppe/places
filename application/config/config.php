@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://mauricio.projects:8081/places';
+$config['base_url']	= 'http://software.projects:8081/places';
 
 /*
 |--------------------------------------------------------------------------

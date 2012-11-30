@@ -76,6 +76,75 @@
 		</div>
 	</div>
 	
+	<?php $table = 'hospital';	?>		
+	<div class="expand box_shadow">
+		
+		<!-- On off slider -->
+		<div class="slider_frame float_right">
+			<span class="slider_button on">ON</span>
+		</div>
+		
+		<div class="name">Hospitales</div>		
+		
+		<div class="data">
+			<ul>
+			<?php foreach($hospital as $row): ?>				
+				<li data-table="<?php echo $table; ?>"
+					data-id="<?php echo $row['id' . '_' . $table]; ?>"
+						class="<?php echo $row['alive'] != 1 ? 'dead' : ''; ?>">
+					<?php echo $row['nombre']; ?>
+				</li>
+			<?php endforeach;?>
+			</ul>
+		</div>
+	</div>
+	
+	<?php $table = 'hotel';	?>		
+	<div class="expand box_shadow">
+		
+		<!-- On off slider -->
+		<div class="slider_frame float_right">
+			<span class="slider_button on">ON</span>
+		</div>
+		
+		<div class="name">Hoteles</div>		
+		
+		<div class="data">
+			<ul>
+			<?php foreach($hotel as $row): ?>				
+				<li data-table="<?php echo $table; ?>"
+					data-id="<?php echo $row['id' . '_' . $table]; ?>"
+						class="<?php echo $row['alive'] != 1 ? 'dead' : ''; ?>">
+					<?php echo $row['nombre']; ?>
+				</li>
+			<?php endforeach;?>
+			</ul>
+		</div>
+	</div>
+	
+	<?php $table = 'farmacia';	?>		
+	<div class="expand box_shadow">
+		
+		<!-- On off slider -->
+		<div class="slider_frame float_right">
+			<span class="slider_button on">ON</span>
+		</div>
+		
+		<div class="name">Farmacias</div>		
+		
+		<div class="data">
+			<ul>
+			<?php foreach($farmacia as $row): ?>				
+				<li data-table="<?php echo $table; ?>"
+					data-id="<?php echo $row['id' . '_' . $table]; ?>"
+						class="<?php echo $row['alive'] != 1 ? 'dead' : ''; ?>">
+					<?php echo $row['nombre']; ?>
+				</li>
+			<?php endforeach;?>
+			</ul>
+		</div>
+	</div>
+	
 	<!-- DIRECTIONS PANEL -->	
 	<div class="expand box_shadow">
 		<div class="name">Direcciones</div>	
@@ -100,7 +169,7 @@
 
 <div id="gray_box">
 	<div id="gray_box_data">
-		<img src="<?php echo base_url();?>images/logo.png" alt="UCB Logo" />
+		<img src="<?php echo base_url();?>images/logo.jpg" alt="UCB Logo" />
 		
 		<div id="gray_box_scroll">
 			<h1>Bienvenido!!!</h1>
@@ -126,22 +195,39 @@
 			<table>
 				<tr>
 					<th></th>
-					<th>ATMs</th>
-					<th>SUCURSALES</th>
+					<th>Disponible</th>
+					<th>No disponible</th>
 				</tr>
 				<tr>
-					<td>Disponible</td>
-					<td><img src="<?php echo base_url();?>images/atm/icons/atm_dark.png" 
-							alt="Atm disponible" /></td>
+					<td>SUCURSALES</td>
 					<td><img src="<?php echo base_url();?>images/sucursal/icons/sucursal_light.png" 
 							alt="Sucursal disponible" /></td>
-				</tr>
-				<tr>
-					<td>No Disponible</td>
-					<td><img src="<?php echo base_url();?>images/atm/icons/atm_error.png" 
-							alt="Atm no disponible" /></td>
 					<td><img src="<?php echo base_url();?>images/sucursal/icons/sucursal_error.png" 
 							alt="Sucursal no disponible" /></td>
+				</tr>
+				<tr>
+					<td>ATMS</td>
+					<td><img src="<?php echo base_url();?>images/atm/icons/atm_dark.png" 
+							alt="Atm disponible" /></td>
+					<td><img src="<?php echo base_url();?>images/atm/icons/atm_error.png" 
+							alt="Atm no disponible" /></td>
+				<tr>
+					<td>HOSPITALES</td>
+					<td><img src="<?php echo base_url();?>images/hospital/icons/hospital_dark.png" 
+							alt="Hospital disponible" /></td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>HOTELES</td>
+					<td><img src="<?php echo base_url();?>images/hotel/icons/hotel_dark.png" 
+							alt="Hotell disponible" /></td>
+					<td>-</td>
+				</tr>
+				<tr>
+					<td>FARMACIAS</td>
+					<td><img src="<?php echo base_url();?>images/farmacia/icons/farmacia_dark.png" 
+							alt="Farmacia disponible" /></td>
+					<td>-</td>
 				</tr>
 			</table>
 			
@@ -149,9 +235,9 @@
 			
 			<h1>Instrucciones</h1>
 			<p>
-				Para encontrar la ruta a una sucursal o atm simplemente haga click <br />
-				en el marcador deseado o si prefiere haga click en el nombre de su <br />
-				sucursal o atm favorito	en el menu de la izquierda:
+				Para encontrar la ruta a un sitio de interes simplemente haga click <br />
+				en el marcador deseado o si prefiere haga click en el nombre del <br />
+				sitio de interes deseado en el menu de la izquierda:
 			</p>
 			
 			<img class="box_shadow_light" src="<?php echo base_url();?>images/welcome/inst_1.jpg" alt="Welcome 1" />		
@@ -165,7 +251,7 @@
 			<p>
 				Tambien puede desactivar la visibilidad de algunos marcadores <br />
 				haciendo click en los 'sliders' que aparecen a la derecha de los <br />
-				atms y sucursales
+				sitios de interes
 			</p>
 			
 			<img class="box_shadow_light" src="<?php echo base_url();?>images/welcome/inst_4.png" alt="Welcome 4" />		

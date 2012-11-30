@@ -6,14 +6,27 @@
 $(document).ready(function(){
 	
 	rules = {
-			nombre: "required",
-			apellido_paterno: "required",
-			apellido_materno: "required",
-			direccion: "required",
+			nombre: {
+				required: true,
+				maxlength: 50
+			},
+			apellido_paterno: {
+				required: true,
+				maxlength: 40
+			},
+			apellido_materno: {
+				required: true,
+				maxlength: 40
+			},
+			direccion: {
+				required: true,
+				maxlength: 180
+			},
 			telefono: {
 				required: true,
 				digits: true,
-				minlength: 7
+				minlength: 7,
+				maxlength: 10
 			},
 			inicio: {
 				required: true,
@@ -29,13 +42,18 @@ $(document).ready(function(){
 				statusCheck: true,
 				required: true
 			},
+			detalles: {
+				maxlength: 200
+			},
 			usuario: {
 				required: true,
-				minlength: 5
+				minlength: 5,
+				maxlength: 20
 			},
 			pass: {
 				required: true,
-				minlength: 5
+				minlength: 5,
+				maxlength: 40
 			},
 			verify: {
 				required: true,
@@ -43,7 +61,8 @@ $(document).ready(function(){
 			},
 			email: {
 				required: true,
-				email: true
+				email: true,
+				maxlength: 50
 			},
 			//blue direction for the form inside the banner
 			blue_address: {
@@ -52,14 +71,27 @@ $(document).ready(function(){
 		};
 
 	messages = {
-		nombre: "Nombre requerido",
-		apellido_paterno: "Apellido paterno requerido",
-		apellido_materno: "Apellido materno requerido",
-		direccion: "Direccion requerida",
+		nombre: {
+			required: "Nombre requerido",
+			maxlength: "Longitud maxima excedida"
+		},
+		apellido_paterno: {
+			required: "Apellido paterno requerido",
+			maxlength: "Longitud maxima excedida"
+		},
+		apellido_materno: {
+			required: "Apellido materno requerido",
+			maxlength: "Longitud maxima excedida"
+		},
+		direccion: {
+			required: "Direccion requerida",
+			maxlength: "Longitud maxima excedida"
+		},
 		telefono: {
 			required: 'Telefono requerido',
 			digits: 'El telefono solo puede contener digitos',
-			minlength: $.format('El telefono debe tener al menos {0} digitos')			
+			minlength: $.format('El telefono debe tener al menos {0} digitos'),			
+			maxlength: "Longitud maxima excedida"
 		},
 		inicio: {
 			required: "Inicio de atencion requerido",
@@ -72,13 +104,18 @@ $(document).ready(function(){
 		status: {
 			required: "Status requerido (0 o 1)"
 		},
+		detalles: {
+			maxlength: "Longitud maxima excedida"
+		},
 		usuario: {
 			required: 'Nombre de usuario requerido',
-			minlength: $.format('El nombre de usuario debe tener al menos {0} caracteres')			
+			minlength: $.format('El nombre de usuario debe tener al menos {0} caracteres'),		
+			maxlength: "Longitud maxima excedida"
 		},
 		pass: {
 			required: 'Contrasena requerida',
-			minlength: $.format('La contrasena debe tener al menos {0} caracteres')			
+			minlength: $.format('La contrasena debe tener al menos {0} caracteres'),			
+			maxlength: "Longitud maxima excedida"
 		},
 		verify: {
 			required: 'Verificacion de contrasena requerida',
@@ -86,7 +123,8 @@ $(document).ready(function(){
 		},
 		email: {
 			required: 'Email requerido',
-			email: 'No es una direccion de email valida'			
+			email: 'No es una direccion de email valida',		
+			maxlength: "Longitud maxima excedida"
 		},
 		blue_address: {
 			required: 'Direccion requerida'

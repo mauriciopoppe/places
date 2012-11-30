@@ -44,7 +44,7 @@ lightbox = new Lightbox options
   var $, Lightbox, LightboxOptions;
 
   $ = jQuery;
-  var host = 'http://localhost/gis_bancos_atms_v2/';
+  var host = 'http://software.projects:8081/places/';
   LightboxOptions = (function() {
 
     function LightboxOptions() {

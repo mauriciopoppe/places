@@ -4,7 +4,7 @@
 	<div id="search_bar">
 	
 		<a href="<?php echo base_url();?>app">
-			<img src="<?php echo base_url();?>images/logo.png" alt="UCB Logo" />
+			<img src="<?php echo base_url();?>images/logo.jpg" alt="Logo" />
 		</a>
 		<?php 
 			$is_logged_in = $this->session->userdata('is_logged_in');

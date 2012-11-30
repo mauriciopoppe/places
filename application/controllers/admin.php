@@ -11,7 +11,7 @@
 		function index()
 		{
 			$data = array();
-			$data['title'] = 'Buscador de sucursales y atms del BNB';				
+			$data['title'] = 'Localizador de sitios de interes';				
 			$this->load->view('admin_view', $data);
 		}
 		
@@ -34,7 +34,7 @@
 			//get the data by id
 			$id = $this->session->userdata('id_admin');
 			$data['admin_single'] = $this->admin_model->get_byid($id);
-			$data['title'] = 'Buscador de sucursales y atms del BNB';
+			$data['title'] = 'Localizador de sitios de interes';
 			$this->load->view('admin_options_view', $data);				
 		}
 

@@ -24,6 +24,12 @@
 						<span>Atencion: </span>{{inicio}} - {{fin}}
 					</p>
 				{{/if}}
+				{{#if estrellas}}
+					<p>
+						<span>Estrellas: </span>
+						<img src="<?php echo base_url(); ?>images/estrellas/{{estrellas}}.png" alt="Estrellas">
+					</p>
+				{{/if}}
 		
 			</div>
 
@@ -49,13 +55,7 @@
 		</li>
 		<?php endif; ?>
 		<li>
-			<a href="http://www.bnb.com.bo">Banco Nacional de Bolivia</a>
-		</li>
-		<li>
 			<a href="https://developers.google.com/maps/terms">Google TOS</a>
-		</li>
-		<li>
-			<a href="<?php echo base_url('help_bpwin/Pagina proyecto.htm'); ?>">Ayuda BPWin</a>
 		</li>
 	</ul>
 </div>
@@ -86,7 +86,7 @@ $(document).ready(function(){
 	var allData = $('div.data');
 	allData.hide();	
 	
-	<?php if(isset($sucursal) || isset($atm)): ?>	
+	<?php if(isset($sucursal) || isset($atm) || isset($hospital) || isset($hotel) || isset($farmacia)): ?>	
 		var the_map = showMap();
 	<?php endif; ?>
 
@@ -113,6 +113,27 @@ $(document).ready(function(){
 		var jsonAtms = <?php echo json_encode($atm); ?>;
 		ajaxUrl = '<?php echo site_url('atm/get_byid/atm'); ?>';
 		showMarkers(the_map, jsonAtms, '<?php echo base_url(); ?>images/atm/icons/', 'atm_dark.png');
+	<?php endif; ?>
+	
+	<?php if(isset($hospital)): ?>
+		/************ SHOW HOSPITAL MARKERS************/
+		var jsonHospitales = <?php echo json_encode($hospital); ?>;
+		ajaxUrl = '<?php echo site_url('hospital/get_byid/hospital'); ?>';
+		showMarkers(the_map, jsonHospitales, '<?php echo base_url(); ?>images/hospital/icons/', 'hospital_dark.png');
+	<?php endif; ?>
+
+	<?php if(isset($farmacia)): ?>
+		/************ SHOW FARMACIA MARKERS************/
+		var jsonFarmacia = <?php echo json_encode($farmacia); ?>;
+		ajaxUrl = '<?php echo site_url('farmacia/get_byid/farmacia'); ?>';
+		showMarkers(the_map, jsonFarmacia, '<?php echo base_url(); ?>images/farmacia/icons/', 'farmacia_dark.png');
+	<?php endif; ?>
+	
+	<?php if(isset($hotel)): ?>
+		/************ SHOW HOSPITAL MARKERS************/
+		var jsonHotel = <?php echo json_encode($hotel); ?>;
+		ajaxUrl = '<?php echo site_url('hotel/get_byid/hotel'); ?>';
+		showMarkers(the_map, jsonHotel, '<?php echo base_url(); ?>images/hotel/icons/', 'hotel_dark.png');
 	<?php endif; ?>
 	
 	//login form ajax check
@@ -198,7 +219,7 @@ $(document).ready(function(){
 	$('#blue_form').submit(function(e){
 
 		//check current time
-		<?php if(isset($sucursal) || isset($atm)):?>
+		<?php if(isset($sucursal) || isset($atm) || isset($hospital) || isset($hotel) || isset($farmacia)):?>
 			doGeocode(the_map, $('#blue_address').val());
 		<?php endif; ?>
 		e.preventDefault();
