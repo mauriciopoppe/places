@@ -274,6 +274,7 @@
 		var gray_box = $('#gray_box');
 		var fadeTime = 500;
 		
+		// show the instructions if About this app is clicked
 		$('#instructions').click(function(){
 			$('body').css('overflow', 'hidden');
 			screen.css({

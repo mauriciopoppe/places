@@ -79,8 +79,6 @@ $(document).ready(function(){
 	
 	<?php 
 		// INITIALLY HIDE ALL DATA
-		//TODO: Show both sucursales and atms on start
-		//UPDATE: Maybe not
 	?>
 	
 	var allData = $('div.data');
@@ -130,13 +128,13 @@ $(document).ready(function(){
 	<?php endif; ?>
 	
 	<?php if(isset($hotel)): ?>
-		/************ SHOW HOSPITAL MARKERS************/
+		/************ SHOW HOTEL MARKERS************/
 		var jsonHotel = <?php echo json_encode($hotel); ?>;
 		ajaxUrl = '<?php echo site_url('hotel/get_byid/hotel'); ?>';
 		showMarkers(the_map, jsonHotel, '<?php echo base_url(); ?>images/hotel/icons/', 'hotel_dark.png');
 	<?php endif; ?>
 	
-	//login form ajax check
+	// login form ajax check
 	$('#login_submit').click(function(){
 		var loginFormData = {
 			username: username.val(),

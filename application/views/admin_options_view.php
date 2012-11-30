@@ -58,7 +58,6 @@
 	<script type="text/javascript">
 		$(function(){				
 			var allData = $('div.data');
-			//$('div.data form label').css('display', 'inline');
 			var inputs = $('div.data form input[type!=hidden]');
 			inputs.after('<br />');			
 			allData.css({
@@ -68,7 +67,41 @@
 			allData.show();
 			allData.unbind('click');
 
-			$('#modify_form').validate({rules: rules, messages: messages});			
+			$('#modify_form').validate({rules: rules, messages: messages});
+
+			// check the user using ajax
+			function verify_user(user) {
+				var that = this;
+				$.ajax({
+					type: 'POST',
+					url: '<?php echo base_url();?>admin/check_username',
+					data: 'usuario=' + user,
+					success: function(msg) {
+						console.log(msg);
+						if (msg === 'failure') {
+							$(that).addClass('error')
+									.removeClass('valid');
+							$(that).parent().find('.error-user').html('El usuario ya existe en la base de datos');
+						} else {
+							$(that).addClass('valid')
+									.removeClass('error');
+							$(that).parent().find('.error-user').html('');
+						}
+					}
+				});
+			}
+
+			$('body').on('keyup', 'input[name=usuario]', function () {
+				verify_user.call(this, $(this).val());
+			});
+
+			$('#insert_form').submit(function () {
+				var error = $(this).find('.error-user').html();
+				if (error !== '') {
+					console.log('here');
+					return false;
+				}
+			});
 		});
 
 	</script>

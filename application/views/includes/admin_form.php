@@ -12,6 +12,7 @@
 		
 	echo form_open('admin/' . $crud . '_' . $table, array('id' => $crud . "_form", 'autocomplete' => 'off'));
 	label_input('Usuario: ', 'usuario', chk('usuario', $data));
+	echo "<label class='error-user'></label>";
 	label_pass('Contrasena: ', 'pass', chk('pass', $data));
 	label_pass('Repetir contrasena: ', 'verify', chk('verifiy', $data));
 	label_input('Nombres: ', 'nombre', chk('nombre', $data));

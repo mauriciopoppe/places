@@ -21,7 +21,7 @@
 	
 	$data = array();
 	$crud = 'insert';
-	if(isset($atm_single)) /* Change this line */
+	if(isset($atm_single))
 	{
 		$data = $atm_single[0];
 		$crud = 'modify';

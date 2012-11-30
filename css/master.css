@@ -100,7 +100,7 @@ body{
 
 	#search_bar ul{
 		list-style: none;
-		margin-left: 260px;
+		margin-left: 220px;
 	}
 
 	#search_bar ul li{
@@ -305,7 +305,7 @@ input.error{
 	border: 1px solid red !important;
 }
 
-label.error{
+label.error, label.error-user{
 	margin-top: 0;
 	margin-bottom: 10px;
 	padding: 0;
